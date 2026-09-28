@@ -1,0 +1,6 @@
+# Training / generation environment used for the paper (Kaggle, one NVIDIA T4 16 GB).
+# Versions recorded by the notebooks at run time.
+# Python 3.12.13, torch 2.10.0+cu128 (Kaggle image).
+transformers==4.47.1   # REQUIRED: transformers 5.x fails to load the AraBART and AraT5 tokenizers
+# Also used (Kaggle-image versions, not pinned in the runs): accelerate, sentencepiece, datasets,
+# peft and bitsandbytes (Jais only), evaluate, bert-score, rouge-score, nltk, qalsadi.

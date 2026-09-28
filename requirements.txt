@@ -1,0 +1,12 @@
+# Environment A -- scoring and analysis (scripts/reproduce_analysis.py, scripts/make_figures.py)
+# Tested with Python 3.11 and 3.12. No GPU needed.
+rouge-score==0.1.2
+nltk==3.10.3          # 3.9.1 gives identical scores
+qalsadi==0.5.1
+Tashaphyne==0.3.6
+PyArabic==0.6.15
+numpy==2.4.6
+pandas==3.0.6
+scipy==1.17.1
+matplotlib==3.11.2
+absl-py==2.5.0

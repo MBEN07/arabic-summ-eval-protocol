@@ -1,0 +1,13 @@
+# Environment B -- the official XL-Sum multilingual ROUGE scorer (scripts/score_xlsum_official.py).
+# It installs under the module name `rouge_score`, so it must NOT share an environment with
+# Google's rouge-score from requirements.txt.
+rouge_score @ git+https://github.com/csebuetnlp/xl-sum@afcd803c8d7c98f3be60e9a7ce57fcbc3e729e8c#subdirectory=multilingual_rouge_scoring
+pyonmttok==1.38.1
+six==1.17.0
+absl-py==2.5.0
+nltk==3.10.3
+qalsadi==0.5.1
+Tashaphyne==0.3.6
+PyArabic==0.6.15
+numpy==2.4.6
+pandas==3.0.6
