@@ -25,7 +25,7 @@ scripts/data_io.py           loads the test set + predictions and verifies them 
 scripts/normalisers.py       the tokenisers and the six Arabic normalisers
 scripts/score_xlsum_official.py   scoring with the official XL-Sum scorer   (environment B)
 scripts/reproduce_analysis.py     every other analysis in the paper           (environment A)
-scripts/make_figures.py      Fig. 1 and Fig. 2
+scripts/make_figures.py      Fig. 1 (four panels)
 notebooks/                   data preparation, training, generation (Kaggle, one T4 GPU)
 outputs/                     the results as produced for the paper, incl. per-example scores
 ```
@@ -60,22 +60,22 @@ python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('stopwords')"
 python scripts/reproduce_analysis.py        # all tables; see outputs/run_log.txt
-python scripts/make_figures.py              # Fig. 1 and Fig. 2
+python scripts/make_figures.py              # Fig. 1 (fig_overview.pdf)
 ```
 
 ### Where each paper result comes from
 
 | Paper | Output file |
 |---|---|
-| Table 3, main results with 95% CIs | `outputs/main_with_ci.csv` |
-| Fig. 1, paired differences | `outputs/pairwise_ci.csv` |
-| Table 4, six scoring protocols | `outputs/protocols.csv` |
-| Table 5, normaliser matrix | `outputs/normaliser_matrix.csv` |
-| Table 6, named entities | `outputs/entities.csv` |
-| Fig. 2, Jais truncation sweep, Jais CIs | `outputs/length_sweep.csv`, `outputs/jais_ci.csv` |
-| Table 8, length brackets and correlations | `outputs/length_brackets.csv`, `outputs/length_correlation.csv` |
-| Table 9, extractiveness | `outputs/extractiveness.csv`, `outputs/extractiveness_pairwise_ci.csv` |
-| Sect. 4.8, comparison with Kahla et al. | `outputs/prior_work_arasum.csv` |
+| Table 2, main results with 95% CIs; paired differences in Sect. 4.1 | `outputs/main_with_ci.csv`, `outputs/pairwise_ci.csv` |
+| Fig. 1a, six scoring protocols (P1–P6) | `outputs/protocols.csv` |
+| Fig. 1b, Jais truncation sweep; Jais CIs | `outputs/length_sweep.csv`, `outputs/jais_ci.csv` |
+| Fig. 1c, output length vs ROUGE-1; length statistics in Sect. 4.4 | `outputs/per_example_features.csv.gz`, `outputs/length_correlation.csv`, `outputs/length_brackets.csv` |
+| Fig. 1d, correlation matrix | `outputs/correlation_matrix.csv` |
+| Table 3, normaliser matrix | `outputs/normaliser_matrix.csv` |
+| Table 4, named entities | `outputs/entities.csv` |
+| Table 5, extractiveness | `outputs/extractiveness.csv`, `outputs/extractiveness_pairwise_ci.csv` |
+| Sect. 4.6, comparison with Kahla et al. | `outputs/prior_work_arasum.csv` |
 | Per-example scores | `outputs/per_example_scores.csv.gz`, `outputs/xlsum_official_per_example.csv.gz` |
 
 ## Scoring protocols
