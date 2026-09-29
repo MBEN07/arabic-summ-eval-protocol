@@ -2,7 +2,7 @@
 
 Code, predictions and per-example scores for:
 
-> M. Bentalb, O. M. Reda, W. Cherif. *Evaluation Protocol Effects Exceed Model Differences
+> M. Bentalb, W. Cherif, O. M. Reda. *Evaluation Protocol Effects Exceed Model Differences
 > in Arabic Abstractive Summarization.* ICALP 2026 (Springer CCIS).
 
 The paper fine-tunes mT5-small, AraBART and AraT5v2-base under one protocol, adds zero-shot
@@ -148,7 +148,7 @@ the terms of those datasets.
 @inproceedings{bentalb2026protocol,
   title     = {Evaluation Protocol Effects Exceed Model Differences in Arabic Abstractive
                Summarization},
-  author    = {Bentalb, Mohamed and Reda, Oussama Mohamed and Cherif, Walid},
+  author    = {Bentalb, Mohamed and Cherif, Walid and Reda, Oussama Mohamed},
   booktitle = {Arabic Language Processing (ICALP 2026)},
   series    = {Communications in Computer and Information Science},
   publisher = {Springer},
