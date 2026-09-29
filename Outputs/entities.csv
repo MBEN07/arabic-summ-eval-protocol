@@ -1,0 +1,121 @@
+entity,freq,normaliser,form,intact
+باريس,13,orthographic,باريس,True
+بغداد,14,orthographic,بغداد,True
+لبنان,9,orthographic,لبنان,True
+واشنطن,15,orthographic,واشنطن,True
+بريطانيا,16,orthographic,بريطانيا,True
+برلين,18,orthographic,برلين,True
+فرنسا,14,orthographic,فرنسا,True
+بيروت,8,orthographic,بيروت,True
+دمشق,8,orthographic,دمشق,True
+القاهرة,8,orthographic,القاهره,False
+لندن,10,orthographic,لندن,True
+موسكو,4,orthographic,موسكو,True
+طهران,4,orthographic,طهران,True
+الرياض,7,orthographic,الرياض,True
+اسطنبول,2,orthographic,اسطنبول,True
+نيويورك,5,orthographic,نيويورك,True
+تونس,12,orthographic,تونس,True
+الجزائر,3,orthographic,الجزائر,True
+المغرب,4,orthographic,المغرب,True
+اليمن,31,orthographic,اليمن,True
+باريس,13,Snowball stemmer,اريس,False
+بغداد,14,Snowball stemmer,غداد,False
+لبنان,9,Snowball stemmer,لبنا,False
+واشنطن,15,Snowball stemmer,واشنط,False
+بريطانيا,16,Snowball stemmer,ريطان,False
+برلين,18,Snowball stemmer,برل,False
+فرنسا,14,Snowball stemmer,رنس,False
+بيروت,8,Snowball stemmer,يرو,False
+دمشق,8,Snowball stemmer,دمشق,True
+القاهرة,8,Snowball stemmer,قاهر,False
+لندن,10,Snowball stemmer,لند,False
+موسكو,4,Snowball stemmer,موس,False
+طهران,4,Snowball stemmer,طهرا,False
+الرياض,7,Snowball stemmer,رياض,False
+اسطنبول,2,Snowball stemmer,اسطنبول,True
+نيويورك,5,Snowball stemmer,نيويور,False
+تونس,12,Snowball stemmer,تونس,True
+الجزائر,3,Snowball stemmer,جزاير,False
+المغرب,4,Snowball stemmer,مغرب,False
+اليمن,31,Snowball stemmer,يمن,False
+باريس,13,ISRI stemmer,ارس,False
+بغداد,14,ISRI stemmer,غدد,False
+لبنان,9,ISRI stemmer,لبن,False
+واشنطن,15,ISRI stemmer,شنط,False
+بريطانيا,16,ISRI stemmer,برط,False
+برلين,18,ISRI stemmer,برل,False
+فرنسا,14,ISRI stemmer,رنس,False
+بيروت,8,ISRI stemmer,يرو,False
+دمشق,8,ISRI stemmer,دمشق,True
+القاهرة,8,ISRI stemmer,قهر,False
+لندن,10,ISRI stemmer,لند,False
+موسكو,4,ISRI stemmer,وسكو,False
+طهران,4,ISRI stemmer,طهر,False
+الرياض,7,ISRI stemmer,ريض,False
+اسطنبول,2,ISRI stemmer,طنبول,False
+نيويورك,5,ISRI stemmer,وير,False
+تونس,12,ISRI stemmer,ونس,False
+الجزائر,3,ISRI stemmer,جزر,False
+المغرب,4,ISRI stemmer,غرب,False
+اليمن,31,ISRI stemmer,يمن,False
+باريس,13,Tashaphyne light stem,اريس,False
+بغداد,14,Tashaphyne light stem,غداد,False
+لبنان,9,Tashaphyne light stem,بنا,False
+واشنطن,15,Tashaphyne light stem,اشنطن,False
+بريطانيا,16,Tashaphyne light stem,ريطانيا,False
+برلين,18,Tashaphyne light stem,رل,False
+فرنسا,14,Tashaphyne light stem,رنس,False
+بيروت,8,Tashaphyne light stem,يروت,False
+دمشق,8,Tashaphyne light stem,دمشق,True
+القاهرة,8,Tashaphyne light stem,قاهر,False
+لندن,10,Tashaphyne light stem,دن,False
+موسكو,4,Tashaphyne light stem,موسك,False
+طهران,4,Tashaphyne light stem,طهر,False
+الرياض,7,Tashaphyne light stem,رياض,False
+اسطنبول,2,Tashaphyne light stem,اسطنبول,True
+نيويورك,5,Tashaphyne light stem,نيويور,False
+تونس,12,Tashaphyne light stem,ونس,False
+الجزائر,3,Tashaphyne light stem,جزائر,False
+المغرب,4,Tashaphyne light stem,مغرب,False
+اليمن,31,Tashaphyne light stem,يمن,False
+باريس,13,Tashaphyne root,ورس,False
+بغداد,14,Tashaphyne root,غدد,False
+لبنان,9,Tashaphyne root,بنن,False
+واشنطن,15,Tashaphyne root,شنط,False
+بريطانيا,16,Tashaphyne root,رطن,False
+برلين,18,Tashaphyne root,برل,False
+فرنسا,14,Tashaphyne root,فرنس,False
+بيروت,8,Tashaphyne root,برو,False
+دمشق,8,Tashaphyne root,دمشق,True
+القاهرة,8,Tashaphyne root,قهر,False
+لندن,10,Tashaphyne root,دنن,False
+موسكو,4,Tashaphyne root,مسك,False
+طهران,4,Tashaphyne root,طهر,False
+الرياض,7,Tashaphyne root,روض,False
+اسطنبول,2,Tashaphyne root,سطنبل,False
+نيويورك,5,Tashaphyne root,نور,False
+تونس,12,Tashaphyne root,ونس,False
+الجزائر,3,Tashaphyne root,جزءر,False
+المغرب,4,Tashaphyne root,غرب,False
+اليمن,31,Tashaphyne root,يمن,False
+باريس,13,Qalsadi lemmatiser,باريس,True
+بغداد,14,Qalsadi lemmatiser,بغداد,True
+لبنان,9,Qalsadi lemmatiser,لبن,False
+واشنطن,15,Qalsadi lemmatiser,واشنطن,True
+بريطانيا,16,Qalsadi lemmatiser,بريطاني,False
+برلين,18,Qalsadi lemmatiser,برلين,True
+فرنسا,14,Qalsadi lemmatiser,فرنسا,True
+بيروت,8,Qalsadi lemmatiser,بيروت,True
+دمشق,8,Qalsadi lemmatiser,دمشق,True
+القاهرة,8,Qalsadi lemmatiser,قاهر,False
+لندن,10,Qalsadi lemmatiser,أدان,False
+موسكو,4,Qalsadi lemmatiser,موسكو,True
+طهران,4,Qalsadi lemmatiser,طهر,False
+الرياض,7,Qalsadi lemmatiser,الرياض,True
+اسطنبول,2,Qalsadi lemmatiser,اسطنبول,True
+نيويورك,5,Qalsadi lemmatiser,نيويورك,True
+تونس,12,Qalsadi lemmatiser,تونس,True
+الجزائر,3,Qalsadi lemmatiser,جزور,False
+المغرب,4,Qalsadi lemmatiser,مغرب,False
+اليمن,31,Qalsadi lemmatiser,يمن,False

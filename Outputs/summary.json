@@ -1,0 +1,861 @@
+{
+ "versions": {
+  "rouge_score": "0.1.2",
+  "nltk": "3.10.3",
+  "qalsadi": "0.5.1",
+  "tashaphyne": "0.3.6",
+  "pyarabic": "0.6.15",
+  "numpy": "2.4.6",
+  "pandas": "3.0.6",
+  "scipy": "1.17.1"
+ },
+ "python": "3.11.15",
+ "seed": 42,
+ "n_bootstrap": 2000,
+ "protocols_rouge1": {
+  "AraBART": {
+   "whitespace": 26.59,
+   "XL-Sum scorer, unstemmed": 29.58,
+   "punct-aware (punct. kept)": 32.71,
+   "XL-Sum scorer, Snowball (Kahla et al.)": 35.94,
+   "punct-aware + Snowball": 38.65,
+   "punct-aware + Qalsadi (primary)": 38.82,
+   "XL-Sum scorer + orthographic": 29.92,
+   "XL-Sum scorer + Snowball stemmer": 35.94,
+   "XL-Sum scorer + ISRI stemmer": 37.63,
+   "XL-Sum scorer + Tashaphyne light stem": 35.4,
+   "XL-Sum scorer + Tashaphyne root": 37.82,
+   "XL-Sum scorer + Qalsadi lemmatiser": 36.14
+  },
+  "AraBART (zero-shot)": {
+   "whitespace": 15.31,
+   "XL-Sum scorer, unstemmed": 17.1,
+   "punct-aware (punct. kept)": 18.66,
+   "XL-Sum scorer, Snowball (Kahla et al.)": 21.22,
+   "punct-aware + Snowball": 22.66,
+   "punct-aware + Qalsadi (primary)": 22.95,
+   "XL-Sum scorer + orthographic": 17.29,
+   "XL-Sum scorer + Snowball stemmer": 21.22,
+   "XL-Sum scorer + ISRI stemmer": 22.58,
+   "XL-Sum scorer + Tashaphyne light stem": 21.18,
+   "XL-Sum scorer + Tashaphyne root": 22.91,
+   "XL-Sum scorer + Qalsadi lemmatiser": 21.68
+  },
+  "AraT5v2-base": {
+   "whitespace": 26.89,
+   "XL-Sum scorer, unstemmed": 29.83,
+   "punct-aware (punct. kept)": 33.02,
+   "XL-Sum scorer, Snowball (Kahla et al.)": 36.09,
+   "punct-aware + Snowball": 39.0,
+   "punct-aware + Qalsadi (primary)": 39.14,
+   "XL-Sum scorer + orthographic": 30.15,
+   "XL-Sum scorer + Snowball stemmer": 36.09,
+   "XL-Sum scorer + ISRI stemmer": 37.74,
+   "XL-Sum scorer + Tashaphyne light stem": 35.54,
+   "XL-Sum scorer + Tashaphyne root": 38.11,
+   "XL-Sum scorer + Qalsadi lemmatiser": 36.4
+  },
+  "Jais-6.7B (zero-shot)": {
+   "whitespace": 16.25,
+   "XL-Sum scorer, unstemmed": 18.42,
+   "punct-aware (punct. kept)": 20.01,
+   "XL-Sum scorer, Snowball (Kahla et al.)": 23.03,
+   "punct-aware + Snowball": 24.3,
+   "punct-aware + Qalsadi (primary)": 24.58,
+   "XL-Sum scorer + orthographic": 18.74,
+   "XL-Sum scorer + Snowball stemmer": 23.03,
+   "XL-Sum scorer + ISRI stemmer": 24.61,
+   "XL-Sum scorer + Tashaphyne light stem": 22.79,
+   "XL-Sum scorer + Tashaphyne root": 24.84,
+   "XL-Sum scorer + Qalsadi lemmatiser": 23.42
+  },
+  "mT5-small": {
+   "whitespace": 23.8,
+   "XL-Sum scorer, unstemmed": 26.48,
+   "punct-aware (punct. kept)": 29.67,
+   "XL-Sum scorer, Snowball (Kahla et al.)": 32.57,
+   "punct-aware + Snowball": 35.47,
+   "punct-aware + Qalsadi (primary)": 35.59,
+   "XL-Sum scorer + orthographic": 26.76,
+   "XL-Sum scorer + Snowball stemmer": 32.57,
+   "XL-Sum scorer + ISRI stemmer": 34.11,
+   "XL-Sum scorer + Tashaphyne light stem": 31.99,
+   "XL-Sum scorer + Tashaphyne root": 34.32,
+   "XL-Sum scorer + Qalsadi lemmatiser": 32.83
+  }
+ },
+ "empty_token_artefact": {
+  "mT5-small": {
+   "with_empty_tokens": 35.47,
+   "empties_restored": 35.16
+  },
+  "AraBART": {
+   "with_empty_tokens": 38.65,
+   "empties_restored": 38.41
+  },
+  "AraT5v2-base": {
+   "with_empty_tokens": 39.0,
+   "empties_restored": 38.64
+  }
+ },
+ "prior_work_arasum": [
+  {
+   "protocol": "XL-Sum scorer, Snowball (Kahla et al.)",
+   "system": "mT5-small",
+   "n": 560,
+   "rouge1": 33.86,
+   "rouge1_vs_kahla": 0.02,
+   "rouge2": 15.07,
+   "rouge2_vs_kahla": -0.98,
+   "rougeL": 26.46,
+   "rougeL_vs_kahla": -0.07
+  },
+  {
+   "protocol": "XL-Sum scorer, Snowball (Kahla et al.)",
+   "system": "AraBART",
+   "n": 560,
+   "rouge1": 35.51,
+   "rouge1_vs_kahla": 1.67,
+   "rouge2": 15.82,
+   "rouge2_vs_kahla": -0.23,
+   "rougeL": 27.53,
+   "rougeL_vs_kahla": 1.0
+  },
+  {
+   "protocol": "XL-Sum scorer, Snowball (Kahla et al.)",
+   "system": "AraT5v2-base",
+   "n": 560,
+   "rouge1": 35.64,
+   "rouge1_vs_kahla": 1.8,
+   "rouge2": 15.82,
+   "rouge2_vs_kahla": -0.23,
+   "rougeL": 27.3,
+   "rougeL_vs_kahla": 0.77
+  },
+  {
+   "protocol": "punct-aware + Snowball",
+   "system": "mT5-small",
+   "n": 560,
+   "rouge1": 36.69,
+   "rouge1_vs_kahla": 2.85,
+   "rouge2": 14.81,
+   "rouge2_vs_kahla": -1.24,
+   "rougeL": 28.64,
+   "rougeL_vs_kahla": 2.11
+  },
+  {
+   "protocol": "punct-aware + Snowball",
+   "system": "AraBART",
+   "n": 560,
+   "rouge1": 38.08,
+   "rouge1_vs_kahla": 4.24,
+   "rouge2": 15.42,
+   "rouge2_vs_kahla": -0.63,
+   "rougeL": 29.39,
+   "rougeL_vs_kahla": 2.86
+  },
+  {
+   "protocol": "punct-aware + Snowball",
+   "system": "AraT5v2-base",
+   "n": 560,
+   "rouge1": 38.61,
+   "rouge1_vs_kahla": 4.77,
+   "rouge2": 15.46,
+   "rouge2_vs_kahla": -0.59,
+   "rougeL": 29.49,
+   "rougeL_vs_kahla": 2.96
+  }
+ ],
+ "protocol_spread_rouge1": {
+  "mT5-small": [
+   23.8,
+   35.59
+  ],
+  "AraBART": [
+   26.59,
+   38.82
+  ],
+  "AraT5v2-base": [
+   26.89,
+   39.14
+  ],
+  "AraBART (zero-shot)": [
+   15.31,
+   22.95
+  ],
+  "Jais-6.7B (zero-shot)": [
+   16.25,
+   24.84
+  ]
+ },
+ "max_model_gap_rouge1": 3.55,
+ "reference_vocab": {
+  "tokens": 26556,
+  "types": 10544
+ },
+ "extractiveness_pairwise": [
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "measure": "coverage",
+   "diff": 0.028,
+   "lo": 0.021,
+   "hi": 0.034,
+   "distinguishable": true
+  },
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "measure": "density",
+   "diff": 2.176,
+   "lo": 1.837,
+   "hi": 2.506,
+   "distinguishable": true
+  },
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "measure": "novel_3g",
+   "diff": -9.395,
+   "lo": -10.532,
+   "hi": -8.184,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "measure": "coverage",
+   "diff": 0.064,
+   "lo": 0.056,
+   "hi": 0.071,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "measure": "density",
+   "diff": 1.388,
+   "lo": 0.998,
+   "hi": 1.778,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "measure": "novel_3g",
+   "diff": -9.991,
+   "lo": -11.298,
+   "hi": -8.728,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "measure": "coverage",
+   "diff": 0.091,
+   "lo": 0.084,
+   "hi": 0.099,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "measure": "density",
+   "diff": 3.564,
+   "lo": 3.235,
+   "hi": 3.915,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "measure": "novel_3g",
+   "diff": -19.385,
+   "lo": -20.632,
+   "hi": -18.136,
+   "distinguishable": true
+  }
+ ],
+ "main": [
+  {
+   "system": "mT5-small",
+   "rouge1": 35.59,
+   "rouge1_lo": 34.8,
+   "rouge1_hi": 36.43,
+   "rouge2": 13.35,
+   "rouge2_lo": 12.66,
+   "rouge2_hi": 14.09,
+   "rougeL": 28.61,
+   "rougeL_lo": 27.86,
+   "rougeL_hi": 29.4,
+   "R1_precision": 39.08,
+   "R1_recall": 33.9,
+   "words": 26.6
+  },
+  {
+   "system": "AraBART",
+   "rouge1": 38.82,
+   "rouge1_lo": 37.98,
+   "rouge1_hi": 39.65,
+   "rouge2": 15.52,
+   "rouge2_lo": 14.8,
+   "rouge2_hi": 16.31,
+   "rougeL": 31.12,
+   "rougeL_lo": 30.32,
+   "rougeL_hi": 31.96,
+   "R1_precision": 42.89,
+   "R1_recall": 36.59,
+   "words": 26.4
+  },
+  {
+   "system": "AraT5v2-base",
+   "rouge1": 39.14,
+   "rouge1_lo": 38.31,
+   "rouge1_hi": 39.98,
+   "rouge2": 15.64,
+   "rouge2_lo": 14.92,
+   "rouge2_hi": 16.42,
+   "rougeL": 31.25,
+   "rougeL_lo": 30.49,
+   "rougeL_hi": 32.09,
+   "R1_precision": 42.35,
+   "R1_recall": 37.46,
+   "words": 26.9
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "rouge1": 22.95,
+   "rouge1_lo": 22.52,
+   "rouge1_hi": 23.38,
+   "rouge2": 7.62,
+   "rouge2_lo": 7.26,
+   "rouge2_hi": 7.99,
+   "rougeL": 15.6,
+   "rougeL_lo": 15.25,
+   "rougeL_hi": 15.95,
+   "R1_precision": 14.62,
+   "R1_recall": 56.14,
+   "words": 115.0
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "rouge1": 24.58,
+   "rouge1_lo": 24.07,
+   "rouge1_hi": 25.09,
+   "rouge2": 7.85,
+   "rouge2_lo": 7.5,
+   "rouge2_hi": 8.22,
+   "rougeL": 17.21,
+   "rougeL_lo": 16.81,
+   "rougeL_hi": 17.65,
+   "R1_precision": 16.46,
+   "R1_recall": 53.0,
+   "words": 97.4
+  }
+ ],
+ "pairwise": [
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "metric": "rouge1",
+   "diff": -3.22,
+   "lo": -3.89,
+   "hi": -2.54,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "metric": "rouge2",
+   "diff": -2.17,
+   "lo": -2.76,
+   "hi": -1.59,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraBART",
+   "metric": "rougeL",
+   "diff": -2.51,
+   "lo": -3.13,
+   "hi": -1.87,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "metric": "rouge1",
+   "diff": -3.55,
+   "lo": -4.22,
+   "hi": -2.87,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "metric": "rouge2",
+   "diff": -2.29,
+   "lo": -2.88,
+   "hi": -1.71,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "AraT5v2-base",
+   "metric": "rougeL",
+   "diff": -2.65,
+   "lo": -3.28,
+   "hi": -2.0,
+   "distinguishable": true
+  },
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "metric": "rouge1",
+   "diff": -0.33,
+   "lo": -0.96,
+   "hi": 0.27,
+   "distinguishable": false
+  },
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "metric": "rouge2",
+   "diff": -0.12,
+   "lo": -0.7,
+   "hi": 0.42,
+   "distinguishable": false
+  },
+  {
+   "a": "AraBART",
+   "b": "AraT5v2-base",
+   "metric": "rougeL",
+   "diff": -0.13,
+   "lo": -0.71,
+   "hi": 0.43,
+   "distinguishable": false
+  },
+  {
+   "a": "mT5-small",
+   "b": "Jais-6.7B (zero-shot)",
+   "metric": "rouge1",
+   "diff": 11.02,
+   "lo": 10.29,
+   "hi": 11.76,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "Jais-6.7B (zero-shot)",
+   "metric": "rouge2",
+   "diff": 5.5,
+   "lo": 4.93,
+   "hi": 6.09,
+   "distinguishable": true
+  },
+  {
+   "a": "mT5-small",
+   "b": "Jais-6.7B (zero-shot)",
+   "metric": "rougeL",
+   "diff": 11.4,
+   "lo": 10.74,
+   "hi": 12.06,
+   "distinguishable": true
+  }
+ ],
+ "normaliser_matrix": [
+  {
+   "normaliser": "orthographic",
+   "definite article": "0/3",
+   "preposition clitic": "0/2",
+   "conjunction clitic": "0/1",
+   "verb inflection": "0/4",
+   "broken plural": "0/3",
+   "distinct lexemes merged": "0/10",
+   "entities intact": "19/20",
+   "reference tokens altered %": 34.4,
+   "ROUGE-1 mT5-small": 26.76,
+   "ROUGE-1 AraBART": 29.92,
+   "ROUGE-1 AraT5v2-base": 30.15,
+   "gain over unnormalised (mT5)": 0.28
+  },
+  {
+   "normaliser": "Snowball stemmer",
+   "definite article": "3/3",
+   "preposition clitic": "2/2",
+   "conjunction clitic": "1/1",
+   "verb inflection": "1/4",
+   "broken plural": "0/3",
+   "distinct lexemes merged": "0/10",
+   "entities intact": "3/20",
+   "reference tokens altered %": 70.4,
+   "ROUGE-1 mT5-small": 32.57,
+   "ROUGE-1 AraBART": 35.94,
+   "ROUGE-1 AraT5v2-base": 36.09,
+   "gain over unnormalised (mT5)": 6.08
+  },
+  {
+   "normaliser": "ISRI stemmer",
+   "definite article": "3/3",
+   "preposition clitic": "2/2",
+   "conjunction clitic": "1/1",
+   "verb inflection": "3/4",
+   "broken plural": "2/3",
+   "distinct lexemes merged": "10/10",
+   "entities intact": "1/20",
+   "reference tokens altered %": 81.9,
+   "ROUGE-1 mT5-small": 34.11,
+   "ROUGE-1 AraBART": 37.63,
+   "ROUGE-1 AraT5v2-base": 37.74,
+   "gain over unnormalised (mT5)": 7.63
+  },
+  {
+   "normaliser": "Tashaphyne light stem",
+   "definite article": "2/3",
+   "preposition clitic": "2/2",
+   "conjunction clitic": "1/1",
+   "verb inflection": "2/4",
+   "broken plural": "0/3",
+   "distinct lexemes merged": "0/10",
+   "entities intact": "2/20",
+   "reference tokens altered %": 78.6,
+   "ROUGE-1 mT5-small": 31.99,
+   "ROUGE-1 AraBART": 35.4,
+   "ROUGE-1 AraT5v2-base": 35.54,
+   "gain over unnormalised (mT5)": 5.51
+  },
+  {
+   "normaliser": "Tashaphyne root",
+   "definite article": "2/3",
+   "preposition clitic": "2/2",
+   "conjunction clitic": "1/1",
+   "verb inflection": "3/4",
+   "broken plural": "1/3",
+   "distinct lexemes merged": "7/10",
+   "entities intact": "1/20",
+   "reference tokens altered %": 86.6,
+   "ROUGE-1 mT5-small": 34.32,
+   "ROUGE-1 AraBART": 37.82,
+   "ROUGE-1 AraT5v2-base": 38.11,
+   "gain over unnormalised (mT5)": 7.83
+  },
+  {
+   "normaliser": "Qalsadi lemmatiser",
+   "definite article": "3/3",
+   "preposition clitic": "2/2",
+   "conjunction clitic": "1/1",
+   "verb inflection": "3/4",
+   "broken plural": "0/3",
+   "distinct lexemes merged": "0/10",
+   "entities intact": "12/20",
+   "reference tokens altered %": 65.6,
+   "ROUGE-1 mT5-small": 32.83,
+   "ROUGE-1 AraBART": 36.14,
+   "ROUGE-1 AraT5v2-base": 36.4,
+   "gain over unnormalised (mT5)": 6.35
+  }
+ ],
+ "extractiveness": [
+  {
+   "system": "Reference (gold)",
+   "coverage": 0.581,
+   "density": 1.426,
+   "novel_1g_%": 44.745,
+   "novel_2g_%": 78.603,
+   "novel_3g_%": 89.955
+  },
+  {
+   "system": "mT5-small",
+   "coverage": 0.895,
+   "density": 8.163,
+   "novel_1g_%": 11.295,
+   "novel_2g_%": 31.614,
+   "novel_3g_%": 44.626
+  },
+  {
+   "system": "AraBART",
+   "coverage": 0.831,
+   "density": 6.775,
+   "novel_1g_%": 17.96,
+   "novel_2g_%": 41.744,
+   "novel_3g_%": 54.617
+  },
+  {
+   "system": "AraT5v2-base",
+   "coverage": 0.803,
+   "density": 4.599,
+   "novel_1g_%": 21.185,
+   "novel_2g_%": 49.443,
+   "novel_3g_%": 64.012
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "coverage": 0.967,
+   "density": 51.4,
+   "novel_1g_%": 4.442,
+   "novel_2g_%": 10.362,
+   "novel_3g_%": 14.725
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "coverage": 0.75,
+   "density": 3.775,
+   "novel_1g_%": 30.765,
+   "novel_2g_%": 59.876,
+   "novel_3g_%": 74.233
+  }
+ ],
+ "length_correlation": [
+  {
+   "system": "mT5-small",
+   "mean_words": 26.6,
+   "rho(len,F1)": 0.07,
+   "p_len": 0.027194777989141543,
+   "rho(|log ratio|,F1)": -0.122,
+   "p_dev": 0.00011110287898234188,
+   "rho(len,P)": -0.181,
+   "rho(len,R)": 0.246,
+   "R2_length_model": 0.022
+  },
+  {
+   "system": "AraBART",
+   "mean_words": 26.4,
+   "rho(len,F1)": -0.075,
+   "p_len": 0.01820230900500642,
+   "rho(|log ratio|,F1)": -0.089,
+   "p_dev": 0.004939871573973002,
+   "rho(len,P)": -0.298,
+   "rho(len,R)": 0.105,
+   "R2_length_model": 0.027
+  },
+  {
+   "system": "AraT5v2-base",
+   "mean_words": 26.9,
+   "rho(len,F1)": -0.085,
+   "p_len": 0.006949168901556498,
+   "rho(|log ratio|,F1)": -0.053,
+   "p_dev": 0.09145212147737654,
+   "rho(len,P)": -0.27,
+   "rho(len,R)": 0.074,
+   "R2_length_model": 0.027
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "mean_words": 115.0,
+   "rho(len,F1)": -0.077,
+   "p_len": 0.014955237930825207,
+   "rho(|log ratio|,F1)": -0.528,
+   "p_dev": 6.990101197580155e-73,
+   "rho(len,P)": -0.109,
+   "rho(len,R)": 0.104,
+   "R2_length_model": 0.302
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "mean_words": 97.4,
+   "rho(len,F1)": -0.25,
+   "p_len": 1.0285731140071372e-15,
+   "rho(|log ratio|,F1)": -0.54,
+   "p_dev": 1.049364195644745e-76,
+   "rho(len,P)": -0.339,
+   "rho(len,R)": 0.191,
+   "R2_length_model": 0.304
+  }
+ ],
+ "length_brackets": [
+  {
+   "system": "mT5-small",
+   "bracket": "0-19",
+   "n": 241,
+   "R1_F1": 35.58,
+   "R1_P": 45.12,
+   "R1_R": 30.64
+  },
+  {
+   "system": "mT5-small",
+   "bracket": "20-29",
+   "n": 342,
+   "R1_F1": 34.19,
+   "R1_P": 37.65,
+   "R1_R": 32.14
+  },
+  {
+   "system": "mT5-small",
+   "bracket": "30-39",
+   "n": 390,
+   "R1_F1": 36.54,
+   "R1_P": 36.76,
+   "R1_R": 36.79
+  },
+  {
+   "system": "mT5-small",
+   "bracket": ">=40",
+   "n": 27,
+   "R1_F1": 39.87,
+   "R1_P": 36.8,
+   "R1_R": 43.72
+  },
+  {
+   "system": "AraBART",
+   "bracket": "0-19",
+   "n": 243,
+   "R1_F1": 39.7,
+   "R1_P": 48.76,
+   "R1_R": 34.65
+  },
+  {
+   "system": "AraBART",
+   "bracket": "20-29",
+   "n": 368,
+   "R1_F1": 39.67,
+   "R1_P": 44.43,
+   "R1_R": 36.76
+  },
+  {
+   "system": "AraBART",
+   "bracket": "30-39",
+   "n": 352,
+   "R1_F1": 37.85,
+   "R1_P": 38.44,
+   "R1_R": 37.66
+  },
+  {
+   "system": "AraBART",
+   "bracket": ">=40",
+   "n": 37,
+   "R1_F1": 33.82,
+   "R1_P": 31.25,
+   "R1_R": 37.28
+  },
+  {
+   "system": "AraT5v2-base",
+   "bracket": "0-19",
+   "n": 208,
+   "R1_F1": 41.23,
+   "R1_P": 49.09,
+   "R1_R": 36.87
+  },
+  {
+   "system": "AraT5v2-base",
+   "bracket": "20-29",
+   "n": 369,
+   "R1_F1": 39.5,
+   "R1_P": 43.63,
+   "R1_R": 36.99
+  },
+  {
+   "system": "AraT5v2-base",
+   "bracket": "30-39",
+   "n": 398,
+   "R1_F1": 38.22,
+   "R1_P": 38.46,
+   "R1_R": 38.44
+  },
+  {
+   "system": "AraT5v2-base",
+   "bracket": ">=40",
+   "n": 25,
+   "R1_F1": 31.27,
+   "R1_P": 29.36,
+   "R1_R": 33.82
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "bracket": "0-19",
+   "n": 0,
+   "R1_F1": NaN,
+   "R1_P": NaN,
+   "R1_R": NaN
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "bracket": "20-29",
+   "n": 0,
+   "R1_F1": NaN,
+   "R1_P": NaN,
+   "R1_R": NaN
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "bracket": "30-39",
+   "n": 2,
+   "R1_F1": 24.06,
+   "R1_P": 16.1,
+   "R1_R": 60.71
+  },
+  {
+   "system": "AraBART (zero-shot)",
+   "bracket": ">=40",
+   "n": 998,
+   "R1_F1": 22.95,
+   "R1_P": 14.61,
+   "R1_R": 56.13
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "bracket": "0-19",
+   "n": 1,
+   "R1_F1": 0.0,
+   "R1_P": 0.0,
+   "R1_R": 0.0
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "bracket": "20-29",
+   "n": 5,
+   "R1_F1": 27.33,
+   "R1_P": 25.96,
+   "R1_R": 29.83
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "bracket": "30-39",
+   "n": 6,
+   "R1_F1": 29.42,
+   "R1_P": 25.91,
+   "R1_R": 34.98
+  },
+  {
+   "system": "Jais-6.7B (zero-shot)",
+   "bracket": ">=40",
+   "n": 988,
+   "R1_F1": 24.56,
+   "R1_P": 16.37,
+   "R1_R": 53.29
+  }
+ ],
+ "jais": [
+  {
+   "variant": "full output",
+   "words": 97.4,
+   "rouge1": 24.58,
+   "rouge1_lo": 24.07,
+   "rouge1_hi": 25.09,
+   "rouge2": 7.85,
+   "rouge2_lo": 7.5,
+   "rouge2_hi": 8.22,
+   "rougeL": 17.21,
+   "rougeL_lo": 16.81,
+   "rougeL_hi": 17.65,
+   "mT5_minus_this_R1": 11.02,
+   "lo": 10.29,
+   "hi": 11.76
+  },
+  {
+   "variant": "first 30 words",
+   "words": 29.9,
+   "rouge1": 32.89,
+   "rouge1_lo": 32.2,
+   "rouge1_hi": 33.62,
+   "rouge2": 10.66,
+   "rouge2_lo": 10.1,
+   "rouge2_hi": 11.25,
+   "rougeL": 24.06,
+   "rougeL_lo": 23.46,
+   "rougeL_hi": 24.7,
+   "mT5_minus_this_R1": 2.7,
+   "lo": 2.0,
+   "hi": 3.44
+  }
+ ]
+}

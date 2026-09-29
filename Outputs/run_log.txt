@@ -1,0 +1,108 @@
+scored: whitespace
+scored: punct-aware (punct. kept)
+scored: punct-aware + Snowball
+scored: punct-aware + Qalsadi (primary)
+
+ROUGE-1 F1 by protocol
+ system                                  AraBART  AraBART (zero-shot)  AraT5v2-base  Jais-6.7B (zero-shot)  mT5-small
+protocol                                                                                                            
+whitespace                                26.59                15.31         26.89                  16.25      23.80
+XL-Sum scorer, unstemmed                  29.58                17.10         29.83                  18.42      26.48
+punct-aware (punct. kept)                 32.71                18.66         33.02                  20.01      29.67
+XL-Sum scorer, Snowball (Kahla et al.)    35.94                21.22         36.09                  23.03      32.57
+punct-aware + Snowball                    38.65                22.66         39.00                  24.30      35.47
+punct-aware + Qalsadi (primary)           38.82                22.95         39.14                  24.58      35.59
+XL-Sum scorer + orthographic              29.92                17.29         30.15                  18.74      26.76
+XL-Sum scorer + Snowball stemmer          35.94                21.22         36.09                  23.03      32.57
+XL-Sum scorer + ISRI stemmer              37.63                22.58         37.74                  24.61      34.11
+XL-Sum scorer + Tashaphyne light stem     35.40                21.18         35.54                  22.79      31.99
+XL-Sum scorer + Tashaphyne root           37.82                22.91         38.11                  24.84      34.32
+XL-Sum scorer + Qalsadi lemmatiser        36.14                21.68         36.40                  23.42      32.83
+
+Empty-token artefact
+ {'mT5-small': {'with_empty_tokens': np.float64(35.47), 'empties_restored': np.float64(35.16)}, 'AraBART': {'with_empty_tokens': np.float64(38.65), 'empties_restored': np.float64(38.41)}, 'AraT5v2-base': {'with_empty_tokens': np.float64(39.0), 'empties_restored': np.float64(38.64)}}
+
+AraSum slice vs. Kahla et al. best (33.84/16.05/26.53)
+                                  protocol        system    n  rouge1  rouge1_vs_kahla  rouge2  rouge2_vs_kahla  rougeL  rougeL_vs_kahla
+0  XL-Sum scorer, Snowball (Kahla et al.)     mT5-small  560   33.86             0.02   15.07            -0.98   26.46            -0.07
+1  XL-Sum scorer, Snowball (Kahla et al.)       AraBART  560   35.51             1.67   15.82            -0.23   27.53             1.00
+2  XL-Sum scorer, Snowball (Kahla et al.)  AraT5v2-base  560   35.64             1.80   15.82            -0.23   27.30             0.77
+3                  punct-aware + Snowball     mT5-small  560   36.69             2.85   14.81            -1.24   28.64             2.11
+4                  punct-aware + Snowball       AraBART  560   38.08             4.24   15.42            -0.63   29.39             2.86
+5                  punct-aware + Snowball  AraT5v2-base  560   38.61             4.77   15.46            -0.59   29.49             2.96
+
+Primary protocol with 95% CI
+                   system  rouge1  rouge1_lo  rouge1_hi  rouge2  rouge2_lo  rouge2_hi  rougeL  rougeL_lo  rougeL_hi  R1_precision  R1_recall  words
+0              mT5-small   35.59      34.80      36.43   13.35      12.66      14.09   28.61      27.86      29.40         39.08      33.90   26.6
+1                AraBART   38.82      37.98      39.65   15.52      14.80      16.31   31.12      30.32      31.96         42.89      36.59   26.4
+2           AraT5v2-base   39.14      38.31      39.98   15.64      14.92      16.42   31.25      30.49      32.09         42.35      37.46   26.9
+3    AraBART (zero-shot)   22.95      22.52      23.38    7.62       7.26       7.99   15.60      15.25      15.95         14.62      56.14  115.0
+4  Jais-6.7B (zero-shot)   24.58      24.07      25.09    7.85       7.50       8.22   17.21      16.81      17.65         16.46      53.00   97.4
+
+Normaliser error matrix
+               normaliser definite article preposition clitic conjunction clitic verb inflection broken plural distinct lexemes merged entities intact  reference tokens altered %  ROUGE-1 mT5-small  ROUGE-1 AraBART  ROUGE-1 AraT5v2-base  gain over unnormalised (mT5)
+0           orthographic              0/3                0/2                0/1             0/4           0/3                    0/10           19/20                        34.4              26.76            29.92                 30.15                          0.28
+1       Snowball stemmer              3/3                2/2                1/1             1/4           0/3                    0/10            3/20                        70.4              32.57            35.94                 36.09                          6.08
+2           ISRI stemmer              3/3                2/2                1/1             3/4           2/3                   10/10            1/20                        81.9              34.11            37.63                 37.74                          7.63
+3  Tashaphyne light stem              2/3                2/2                1/1             2/4           0/3                    0/10            2/20                        78.6              31.99            35.40                 35.54                          5.51
+4        Tashaphyne root              2/3                2/2                1/1             3/4           1/3                    7/10            1/20                        86.6              34.32            37.82                 38.11                          7.83
+5     Qalsadi lemmatiser              3/3                2/2                1/1             3/4           0/3                    0/10           12/20                        65.6              32.83            36.14                 36.40                          6.35
+
+Extractiveness differences (paired bootstrap)
+            a             b   measure    diff      lo      hi  distinguishable
+0    AraBART  AraT5v2-base  coverage   0.028   0.021   0.034             True
+1    AraBART  AraT5v2-base   density   2.176   1.837   2.506             True
+2    AraBART  AraT5v2-base  novel_3g  -9.395 -10.532  -8.184             True
+3  mT5-small       AraBART  coverage   0.064   0.056   0.071             True
+4  mT5-small       AraBART   density   1.388   0.998   1.778             True
+5  mT5-small       AraBART  novel_3g  -9.991 -11.298  -8.728             True
+6  mT5-small  AraT5v2-base  coverage   0.091   0.084   0.099             True
+7  mT5-small  AraT5v2-base   density   3.564   3.235   3.915             True
+8  mT5-small  AraT5v2-base  novel_3g -19.385 -20.632 -18.136             True
+
+Extractiveness (vs. source article)
+                   system  coverage  density  novel_1g_%  novel_2g_%  novel_3g_%
+0       Reference (gold)     0.581    1.426      44.745      78.603      89.955
+1              mT5-small     0.895    8.163      11.295      31.614      44.626
+2                AraBART     0.831    6.775      17.960      41.744      54.617
+3           AraT5v2-base     0.803    4.599      21.185      49.443      64.012
+4    AraBART (zero-shot)     0.967   51.400       4.442      10.362      14.725
+5  Jais-6.7B (zero-shot)     0.750    3.775      30.765      59.876      74.233
+
+Length brackets
+                    system bracket    n  R1_F1   R1_P   R1_R
+0               mT5-small    0-19  241  35.58  45.12  30.64
+1               mT5-small   20-29  342  34.19  37.65  32.14
+2               mT5-small   30-39  390  36.54  36.76  36.79
+3               mT5-small    >=40   27  39.87  36.80  43.72
+4                 AraBART    0-19  243  39.70  48.76  34.65
+5                 AraBART   20-29  368  39.67  44.43  36.76
+6                 AraBART   30-39  352  37.85  38.44  37.66
+7                 AraBART    >=40   37  33.82  31.25  37.28
+8            AraT5v2-base    0-19  208  41.23  49.09  36.87
+9            AraT5v2-base   20-29  369  39.50  43.63  36.99
+10           AraT5v2-base   30-39  398  38.22  38.46  38.44
+11           AraT5v2-base    >=40   25  31.27  29.36  33.82
+12    AraBART (zero-shot)    0-19    0    NaN    NaN    NaN
+13    AraBART (zero-shot)   20-29    0    NaN    NaN    NaN
+14    AraBART (zero-shot)   30-39    2  24.06  16.10  60.71
+15    AraBART (zero-shot)    >=40  998  22.95  14.61  56.13
+16  Jais-6.7B (zero-shot)    0-19    1   0.00   0.00   0.00
+17  Jais-6.7B (zero-shot)   20-29    5  27.33  25.96  29.83
+18  Jais-6.7B (zero-shot)   30-39    6  29.42  25.91  34.98
+19  Jais-6.7B (zero-shot)    >=40  988  24.56  16.37  53.29
+
+Length correlation
+                   system  mean_words  rho(len,F1)         p_len  rho(|log ratio|,F1)         p_dev  rho(len,P)  rho(len,R)  R2_length_model
+0              mT5-small        26.6        0.070  2.719478e-02               -0.122  1.111029e-04      -0.181       0.246            0.022
+1                AraBART        26.4       -0.075  1.820231e-02               -0.089  4.939872e-03      -0.298       0.105            0.027
+2           AraT5v2-base        26.9       -0.085  6.949169e-03               -0.053  9.145212e-02      -0.270       0.074            0.027
+3    AraBART (zero-shot)       115.0       -0.077  1.495524e-02               -0.528  6.990101e-73      -0.109       0.104            0.302
+4  Jais-6.7B (zero-shot)        97.4       -0.250  1.028573e-15               -0.540  1.049364e-76      -0.339       0.191            0.304
+
+Jais with CIs
+           variant  words  rouge1  rouge1_lo  rouge1_hi  rouge2  rouge2_lo  rouge2_hi  rougeL  rougeL_lo  rougeL_hi  mT5_minus_this_R1     lo     hi
+0     full output   97.4   24.58      24.07      25.09    7.85        7.5       8.22   17.21      16.81      17.65              11.02  10.29  11.76
+1  first 30 words   29.9   32.89      32.20      33.62   10.66       10.1      11.25   24.06      23.46      24.70               2.70   2.00   3.44
+
+Wrote results to outputs/

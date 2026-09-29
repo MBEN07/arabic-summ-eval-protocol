@@ -1,0 +1,13 @@
+a,b,metric,diff,lo,hi,distinguishable
+mT5-small,AraBART,rouge1,-3.22,-3.89,-2.54,True
+mT5-small,AraBART,rouge2,-2.17,-2.76,-1.59,True
+mT5-small,AraBART,rougeL,-2.51,-3.13,-1.87,True
+mT5-small,AraT5v2-base,rouge1,-3.55,-4.22,-2.87,True
+mT5-small,AraT5v2-base,rouge2,-2.29,-2.88,-1.71,True
+mT5-small,AraT5v2-base,rougeL,-2.65,-3.28,-2.0,True
+AraBART,AraT5v2-base,rouge1,-0.33,-0.96,0.27,False
+AraBART,AraT5v2-base,rouge2,-0.12,-0.7,0.42,False
+AraBART,AraT5v2-base,rougeL,-0.13,-0.71,0.43,False
+mT5-small,Jais-6.7B (zero-shot),rouge1,11.02,10.29,11.76,True
+mT5-small,Jais-6.7B (zero-shot),rouge2,5.5,4.93,6.09,True
+mT5-small,Jais-6.7B (zero-shot),rougeL,11.4,10.74,12.06,True

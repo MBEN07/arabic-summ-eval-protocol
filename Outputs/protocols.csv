@@ -1,0 +1,61 @@
+system,protocol,ROUGE1,ROUGE2,ROUGEL
+mT5-small,whitespace,23.8,9.98,20.03
+AraBART,whitespace,26.59,11.48,22.44
+AraT5v2-base,whitespace,26.89,11.63,22.56
+AraBART (zero-shot),whitespace,15.31,5.15,11.01
+Jais-6.7B (zero-shot),whitespace,16.25,5.04,11.89
+mT5-small,punct-aware (punct. kept),29.67,11.51,24.94
+AraBART,punct-aware (punct. kept),32.71,13.3,27.31
+AraT5v2-base,punct-aware (punct. kept),33.02,13.41,27.47
+AraBART (zero-shot),punct-aware (punct. kept),18.66,6.25,13.25
+Jais-6.7B (zero-shot),punct-aware (punct. kept),20.01,6.3,14.78
+mT5-small,punct-aware + Snowball,35.47,13.42,28.6
+AraBART,punct-aware + Snowball,38.65,15.53,31.1
+AraT5v2-base,punct-aware + Snowball,39.0,15.64,31.29
+AraBART (zero-shot),punct-aware + Snowball,22.66,7.54,15.45
+Jais-6.7B (zero-shot),punct-aware + Snowball,24.3,7.8,17.23
+mT5-small,punct-aware + Qalsadi (primary),35.59,13.35,28.61
+AraBART,punct-aware + Qalsadi (primary),38.82,15.52,31.12
+AraT5v2-base,punct-aware + Qalsadi (primary),39.14,15.64,31.25
+AraBART (zero-shot),punct-aware + Qalsadi (primary),22.95,7.62,15.6
+Jais-6.7B (zero-shot),punct-aware + Qalsadi (primary),24.58,7.85,17.21
+AraBART,XL-Sum scorer + ISRI stemmer,37.63,16.48,29.8
+AraBART (zero-shot),XL-Sum scorer + ISRI stemmer,22.58,7.84,15.24
+AraT5v2-base,XL-Sum scorer + ISRI stemmer,37.74,16.58,29.75
+Jais-6.7B (zero-shot),XL-Sum scorer + ISRI stemmer,24.61,8.28,16.83
+mT5-small,XL-Sum scorer + ISRI stemmer,34.11,14.16,26.87
+AraBART,XL-Sum scorer + Qalsadi lemmatiser,36.14,15.94,28.86
+AraBART (zero-shot),XL-Sum scorer + Qalsadi lemmatiser,21.68,7.7,14.87
+AraT5v2-base,XL-Sum scorer + Qalsadi lemmatiser,36.4,16.05,28.96
+Jais-6.7B (zero-shot),XL-Sum scorer + Qalsadi lemmatiser,23.42,7.97,16.17
+mT5-small,XL-Sum scorer + Qalsadi lemmatiser,32.83,13.71,26.15
+AraBART,XL-Sum scorer + Snowball stemmer,35.94,15.94,28.84
+AraBART (zero-shot),XL-Sum scorer + Snowball stemmer,21.22,7.63,14.61
+AraT5v2-base,XL-Sum scorer + Snowball stemmer,36.09,16.02,28.85
+Jais-6.7B (zero-shot),XL-Sum scorer + Snowball stemmer,23.03,7.99,16.08
+mT5-small,XL-Sum scorer + Snowball stemmer,32.57,13.76,26.1
+AraBART,XL-Sum scorer + Tashaphyne light stem,35.4,15.56,28.39
+AraBART (zero-shot),XL-Sum scorer + Tashaphyne light stem,21.18,7.48,14.5
+AraT5v2-base,XL-Sum scorer + Tashaphyne light stem,35.54,15.65,28.39
+Jais-6.7B (zero-shot),XL-Sum scorer + Tashaphyne light stem,22.79,7.69,15.81
+mT5-small,XL-Sum scorer + Tashaphyne light stem,31.99,13.4,25.62
+AraBART,XL-Sum scorer + Tashaphyne root,37.82,16.46,29.9
+AraBART (zero-shot),XL-Sum scorer + Tashaphyne root,22.91,7.94,15.43
+AraT5v2-base,XL-Sum scorer + Tashaphyne root,38.11,16.68,29.93
+Jais-6.7B (zero-shot),XL-Sum scorer + Tashaphyne root,24.84,8.32,16.87
+mT5-small,XL-Sum scorer + Tashaphyne root,34.32,14.14,26.93
+AraBART,XL-Sum scorer + orthographic,29.92,13.85,24.91
+AraBART (zero-shot),XL-Sum scorer + orthographic,17.29,6.4,12.33
+AraT5v2-base,XL-Sum scorer + orthographic,30.15,13.95,25.03
+Jais-6.7B (zero-shot),XL-Sum scorer + orthographic,18.74,6.64,13.64
+mT5-small,XL-Sum scorer + orthographic,26.76,12.02,22.38
+AraBART,"XL-Sum scorer, Snowball (Kahla et al.)",35.94,15.94,28.84
+AraBART (zero-shot),"XL-Sum scorer, Snowball (Kahla et al.)",21.22,7.63,14.61
+AraT5v2-base,"XL-Sum scorer, Snowball (Kahla et al.)",36.09,16.02,28.85
+Jais-6.7B (zero-shot),"XL-Sum scorer, Snowball (Kahla et al.)",23.03,7.99,16.08
+mT5-small,"XL-Sum scorer, Snowball (Kahla et al.)",32.57,13.76,26.1
+AraBART,"XL-Sum scorer, unstemmed",29.58,13.55,24.64
+AraBART (zero-shot),"XL-Sum scorer, unstemmed",17.1,6.28,12.2
+AraT5v2-base,"XL-Sum scorer, unstemmed",29.83,13.69,24.76
+Jais-6.7B (zero-shot),"XL-Sum scorer, unstemmed",18.42,6.39,13.41
+mT5-small,"XL-Sum scorer, unstemmed",26.48,11.75,22.13

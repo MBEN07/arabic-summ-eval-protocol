@@ -1,0 +1,3 @@
+variant,words,rouge1,rouge1_lo,rouge1_hi,rouge2,rouge2_lo,rouge2_hi,rougeL,rougeL_lo,rougeL_hi,mT5_minus_this_R1,lo,hi
+full output,97.4,24.58,24.07,25.09,7.85,7.5,8.22,17.21,16.81,17.65,11.02,10.29,11.76
+first 30 words,29.9,32.89,32.2,33.62,10.66,10.1,11.25,24.06,23.46,24.7,2.7,2.0,3.44
